@@ -1,2 +1,23 @@
 @import './style/header.scss';
-@import './assets/fonts/yandex-sans/stylesheet.css';
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    font-family: 'Arial',serif;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.hidden {
+    display: none;
+}
+
+.container {
+    width: 80%;
+    height: 2000px;
+    // background-color: rgba(255,0,0,0.02);
+    margin: 0 auto;
+}
