@@ -1,4 +1,59 @@
-.container {
-    width: 100%;
-    background-color: red;
+.main-container {
+    margin: 13px 20px;
+    border-radius: 20px;
+    background-image: url('/src/assets/bg@1x.png');
+    background-repeat: no-repeat;
+    // background-position: -100px 200px;
+    padding-bottom: 20px;
+}
+
+.main-title {
+    display: none;
+}
+
+.info {
+    padding: 20px 0 0 20px;;
+}
+
+.info--greeting {
+    font-size: 18px;
+    color: #333333;
+}
+
+.info--status {
+    font-size: 12px;
+    font-weight: normal;
+    color: #333333;
+    margin-top: 5px;
+}
+.info--weather {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+
+.weather--container {
+    margin-right: 20px;
+}
+
+.weather--title {
+    font-size: 12px;
+    color: #858585;
+    font-weight: normal;
+}
+
+.weather--degree {
+    margin-top: 5px;
+    font-size: 24px;
+    color: #333333;
+}
+
+.upcoming-scenarios {
+    margin-top: 20px;
+    display: flex;
+    overflow-x: auto;
+
+}
+.upcoming-scenarios::-webkit-scrollbar {
+    display: none;
 }

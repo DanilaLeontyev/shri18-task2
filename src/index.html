@@ -18,14 +18,43 @@
       <span></span>
       <span></span>
     </button>
-    <nav class="nav-menu">
+    <nav class="nav-menu hidden">
       <a href="#" class="nav-menu--item">Сводка</a>
       <a href="#" class="nav-menu--item">Устройства</a>
       <a href="#" class="nav-menu--item">Сценарии</a>
     </nav>
   </header>
   <main>
-    <div class="container"></div>
+    <h1 class="main-title">
+      Главное
+    </h1>
+    <div class="main-container">
+
+      <section class="info">
+        <h2 class="info--greeting">Привет, Геннадий!</h2>
+        <p class="info--status">Двери и окна закрыты, сигнализация включена.</p>
+        <div class="info--weather">
+          <div class="weather--container">
+            <p class="weather--title">Дома</p>
+            <p class="weather--degree">+23</p>
+          </div>
+          <div class="weather--container">
+            <p class="weather--title">За окном</p>
+            <p class="weather--degree">+19
+              <img height="20" src=<%=require( './assets/cloud-drizzle.png')%> alt="Облачно"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="upcoming-scenarios">
+        <div class="scenario-card">
+        </div>
+        <div class="scenario-card">
+        </div>
+        <div class="scenario-card">
+        </div>
+      </section>
+    </div>
   </main>
 </body>
 
