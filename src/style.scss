@@ -1,5 +1,8 @@
 @import './style/header.scss';
-@import './style/main.scss';
+@import './style/info.scss';
+@import './style/card.scss';
+@import './style/bar.scss';
+@import './style/card-container.scss';
 
 * {
     box-sizing: border-box;
@@ -30,11 +33,4 @@ th,td {
     display: none;
 }
 
-.scenario-card {
-    display: inline-block;
-    border-radius: 20px;
-    min-width: 200px;
-    height: 120px;
-    margin-right: 20px;
-    background-color: red;
-}
+

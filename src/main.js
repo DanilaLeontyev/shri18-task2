@@ -1,2 +1,3 @@
 import './style.scss'
-import './script/header.js'
+import './script/hamburger.js'
+import './script/filter.js'

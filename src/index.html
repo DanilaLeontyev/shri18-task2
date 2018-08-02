@@ -11,7 +11,7 @@
 <body>
   <header class="header">
     <a href="#" class="header-link">
-      <img src=<%=require( "./assets/Яндекс Дом@1x.png")%> alt="Яндекс Дом">
+      <img src=<%=require( "./assets/ЯндексДом@1x.png")%> alt="Яндекс Дом">
     </a>
     <button class="hamburger-button" type="button">
       <span></span>
@@ -46,7 +46,7 @@
         </div>
       </section>
 
-      <section class="upcoming-scenarios">
+      <section class="info--card card-container">
         <div class="scenario-card">
         </div>
         <div class="scenario-card">
@@ -56,6 +56,61 @@
       </section>
     </div>
   </main>
+
+  <section class="selected">
+    <div class="selected--bar bar">
+      <h2 class="bar--title">Избранные сценарии</h2>
+      <div class="bar--buttonContainer">
+        <button class="buttonContainer--prev"></button>
+        <button class="buttonContainer--next"></button>
+      </div>
+    </div>
+    <div class="selected--card card-container">
+      <div class="scenario-card">
+      </div>
+      <div class="scenario-card">
+      </div>
+      <div class="scenario-card">
+      </div>
+      <div class="scenario-card">
+      </div>
+    </div>
+  </section>
+
+  <section class="favorites">
+    <div class="favorites--bar bar">
+      <div class="bar--content">
+        <h2 class="bar--title">
+          Избранные устройства
+        </h2>
+        <button class="bar--buttonFilter">Все
+          <img class="ArrowDownIcon" src=<%=require( './assets/Icons/arrow-down.svg')%> alt="ArrowDownIcon"></span>
+        </button>
+        <div class="bar--buttonContainer">
+          <button class="buttonContainer--prev"></button>
+          <button class="buttonContainer--next"></button>
+        </div>
+      </div>
+      <ul class="bar--filter hidden">
+        <li class="filter--item">Все</li>
+        <li class="filter--item">Кухня</li>
+        <li class="filter--item">Зал</li>
+        <li class="filter--item">Лампочки</li>
+        <li class="filter--item">Камеры</li>
+        <li class="filter--item">Прихожая</li>
+        <li class="filter--item">Туалет</li>
+        <li class="filter--item">Теплный пол</li>
+      </ul>
+    </div>
+    <div class="favorites--card card-container">
+      <div class="scenario-card">
+      </div>
+      <div class="scenario-card">
+      </div>
+      <div class="scenario-card">
+      </div>
+    </div>
+  </section>
 </body>
 
 </html>

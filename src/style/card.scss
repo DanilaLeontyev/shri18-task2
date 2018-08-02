@@ -1,0 +1,11 @@
+.scenario-card {
+    min-width: 200px;
+    height: 130px;
+    background-color: red;
+    border-radius: 20px;
+    margin-right: 20px;
+}
+
+.scenario-card:first-child {
+    margin-left: 20px;
+}
