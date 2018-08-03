@@ -11,5 +11,19 @@
 }
 
 .main--cards .scenario-card {
-    height: 120px;
+    min-height: 120px;
+}
+
+@media (min-width: 1024px) {
+    .scenario-card:first-child {
+        margin-left: 0;
+    }
+    .selected .scenario-card{
+        margin-top: 20px;
+    }
+
+    .main .scenario-card {
+        margin-top: 20px;
+        margin-right: 0;
+    }
 }
