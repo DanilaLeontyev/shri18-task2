@@ -53,3 +53,30 @@
 .filter--item:hover {
     background-color: #FFD93E;
 }
+
+@media (min-width: 1024px) {
+    .bar--buttonFilter {
+        display: none;
+    }
+    .bar--buttonContainer {
+        display: block;
+        order: 3;
+    }
+    .bar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-right: 40px;
+    }
+
+    .favorites .bar {
+        margin-left: 40px;
+    }
+
+    .bar--filter {
+        margin-top: 0;
+        margin-left: 15px;
+        flex-grow: 1;
+    }
+
+}

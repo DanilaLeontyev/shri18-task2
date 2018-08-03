@@ -1,0 +1,35 @@
+.footer {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .footer {
+        position: sticky;
+        display: block;
+        display: flex;
+        justify-content: space-between;
+        margin: 25px 40px;
+        align-items: center;
+    }
+    .footer-navigation {
+        display: flex;
+        padding: 0;
+    }
+    .footer-navigation--item {
+        list-style: none;
+        margin-right: 20px;
+
+    }
+    .footer-navigation--item > a {
+        text-decoration: none;
+        font-size: 12px;
+        color: #858585;
+    }
+    .footer-navigation--item > a:visited {
+        text-decoration: none;
+    }
+    .footer-credentials {
+        font-size: 12px;
+        color: #858585;
+    }
+}
