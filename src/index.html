@@ -18,64 +18,67 @@
       <span></span>
       <span></span>
     </button>
-    <nav class="nav-menu hidden">
+    <nav class="nav-menu">
       <a href="#" class="nav-menu--item">Сводка</a>
       <a href="#" class="nav-menu--item">Устройства</a>
       <a href="#" class="nav-menu--item">Сценарии</a>
     </nav>
   </header>
+
   <main>
-    <h1 class="main-title">
-      Главное
-    </h1>
-    <div class="main-container">
-
-      <section class="info">
-        <h2 class="info--greeting">Привет, Геннадий!</h2>
-        <p class="info--status">Двери и окна закрыты, сигнализация включена.</p>
-        <div class="info--weather">
-          <div class="weather--container">
-            <p class="weather--title">Дома</p>
-            <p class="weather--degree">+23</p>
+    <section class="main">
+      <h1 class="main--title">
+        Главное
+      </h1>
+      <div class="main-container">
+        <section class="info">
+          <h2 class="info--greeting">Привет, Геннадий!</h2>
+          <p class="info--status">Двери и окна закрыты, сигнализация включена.</p>
+          <div class="info--weather">
+            <div class="weather--container">
+              <p class="weather--title">Дома</p>
+              <p class="weather--degree">+23</p>
+            </div>
+            <div class="weather--container">
+              <p class="weather--title">За окном</p>
+              <p class="weather--degree">+19
+                <img height="20" src=<%=require( './assets/cloud-drizzle.png')%> alt="Облачно"></p>
+            </div>
           </div>
-          <div class="weather--container">
-            <p class="weather--title">За окном</p>
-            <p class="weather--degree">+19
-              <img height="20" src=<%=require( './assets/cloud-drizzle.png')%> alt="Облачно"></p>
-          </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="info--card card-container">
+        <section class="main--cards cards-container">
+          <div class="scenario-card">
+          </div>
+          <div class="scenario-card">
+          </div>
+          <div class="scenario-card">
+          </div>
+        </section>
+      </div>
+    </section>
+
+
+    <section class="selected">
+      <div class="selected--bar bar">
+        <h2 class="bar--title">Избранные сценарии</h2>
+        <div class="bar--buttonContainer">
+          <button class="buttonContainer--prev"></button>
+          <button class="buttonContainer--next"></button>
+        </div>
+      </div>
+      <div class="selected--card cards-container">
         <div class="scenario-card">
         </div>
         <div class="scenario-card">
         </div>
         <div class="scenario-card">
         </div>
-      </section>
-    </div>
+        <div class="scenario-card">
+        </div>
+      </div>
+    </section>
   </main>
-
-  <section class="selected">
-    <div class="selected--bar bar">
-      <h2 class="bar--title">Избранные сценарии</h2>
-      <div class="bar--buttonContainer">
-        <button class="buttonContainer--prev"></button>
-        <button class="buttonContainer--next"></button>
-      </div>
-    </div>
-    <div class="selected--card card-container">
-      <div class="scenario-card">
-      </div>
-      <div class="scenario-card">
-      </div>
-      <div class="scenario-card">
-      </div>
-      <div class="scenario-card">
-      </div>
-    </div>
-  </section>
 
   <section class="favorites">
     <div class="favorites--bar bar">
@@ -83,15 +86,16 @@
         <h2 class="bar--title">
           Избранные устройства
         </h2>
-        <button class="bar--buttonFilter">Все
-          <img class="ArrowDownIcon" src=<%=require( './assets/Icons/arrow-down.svg')%> alt="ArrowDownIcon"></span>
+        <button class="bar--buttonFilter">
+          <span>Все</span>
+          <img src=<%=require( './assets/Icons/arrow-down.svg')%> alt="ArrowDownIcon"></span>
         </button>
         <div class="bar--buttonContainer">
           <button class="buttonContainer--prev"></button>
           <button class="buttonContainer--next"></button>
         </div>
       </div>
-      <ul class="bar--filter hidden">
+      <ul class="bar--filter">
         <li class="filter--item">Все</li>
         <li class="filter--item">Кухня</li>
         <li class="filter--item">Зал</li>
@@ -102,7 +106,7 @@
         <li class="filter--item">Теплный пол</li>
       </ul>
     </div>
-    <div class="favorites--card card-container">
+    <div class="favorites--card cards-container">
       <div class="scenario-card">
       </div>
       <div class="scenario-card">
@@ -111,6 +115,8 @@
       </div>
     </div>
   </section>
+
+  <footer class="footer"></footer>
 </body>
 
 </html>

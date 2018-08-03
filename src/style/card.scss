@@ -1,6 +1,6 @@
 .scenario-card {
     min-width: 200px;
-    height: 130px;
+    height: 100px;
     background-color: red;
     border-radius: 20px;
     margin-right: 20px;
@@ -8,4 +8,8 @@
 
 .scenario-card:first-child {
     margin-left: 20px;
+}
+
+.main--cards .scenario-card {
+    height: 120px;
 }

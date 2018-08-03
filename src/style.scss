@@ -1,7 +1,8 @@
 @import './style/header.scss';
-@import './style/info.scss';
 @import './style/card.scss';
+@import './style/main.scss';
 @import './style/bar.scss';
+@import './style/selected.scss';
 @import './style/card-container.scss';
 
 * {
@@ -29,8 +30,11 @@ th,td {
     padding: 0;
     margin: 0;
 }
-.hidden {
-    display: none;
+
+@media (min-width: 1024px) {
+    main {
+        display: flex;
+    }
 }
 
 

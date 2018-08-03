@@ -1,9 +1,9 @@
-.card-container {
+.cards-container {
     margin-top: 20px;
     display: flex;
     overflow-x: auto;
 }
 
-.card-container::-webkit-scrollbar {
+.cards-container::-webkit-scrollbar {
     display: none;
 }
