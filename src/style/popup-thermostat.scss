@@ -37,6 +37,36 @@
     top: 0;
     flex-grow: 1;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+.thermostat {
+    flex-grow: 1;
+    height: 500px;
+}
 
+#inputCircle {
+    display: block;
+	position: relative;
+	border: 1px solid #000;
+}
+
+#controller {
+    width: 36px;
+	display:block;
+	z-index: 2;
+	position: absolute; 
+	top: 50%;
+	left: 50%;	
+	border: solid 1px red;
+}
+
+#knob {
+    width: 36px;
+	position: absolute;
+	height: 36px; 
+	background: red; 
+	border-radius: 50%;
+}
