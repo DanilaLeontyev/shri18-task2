@@ -1,0 +1,42 @@
+.popup-container {
+    min-width: 100%;
+    min-height: 100%;
+    top: 0;
+    position: absolute;
+    background: rgba(51,51,51,0.50);
+    display: flex;
+    flex-direction: column;
+}
+.popup-buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.popup-buttons > button {
+    margin: 20px;
+    border-radius: 20px;
+    height: 60px;
+    font-family: "Arial";
+    font-weight: bold;
+    font-size: 18px;
+    border: none;
+}
+
+.popup-apply {
+    background-color: #FFD93E;
+}
+
+.popup-close {
+    background-color: white;
+} 
+
+.popup-thermostat {
+    margin: 20px;
+    background-color: white;
+    border-radius: 20px;
+    top: 0;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+
