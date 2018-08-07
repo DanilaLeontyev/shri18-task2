@@ -44,21 +44,26 @@
 
 .thermostat {
     flex-grow: 1;
-    height: 500px;
 }
 
 #inputCircle {
-    display: block;
-	position: relative;
-	border: 1px solid #000;
+    border-radius: 50%;
+	height: 180px;
+	width: 180px;
+	position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #000;
 }
 
 #controller {
     width: 36px;
+    height: 160px;
 	display:block;
 	z-index: 2;
 	position: absolute; 
-	top: 50%;
+	top: 0%;
 	left: 50%;	
 	border: solid 1px red;
 }
