@@ -13,6 +13,9 @@ import { Draggable } from 'gsap/draggable'
 // })
 
 const controller = document.querySelector('#controller')
+const temperature = document.querySelector('.temperature')
+let minAngle = 130;
+let maxAngle = 230;
 
 controller.addEventListener('mousedown', function () {
     this.addEventListener('mousemove', moveController)
@@ -33,6 +36,14 @@ function moveController(event) {
     let radians = Math.atan2(mouseX - x, mouseY - y)
     let degree = (radians * (180 / Math.PI) * -1) + 180;
 
+    if (degree >= minAngle && degree <= maxAngle) {
+        return;
+    }
+
     this.style.transform = `rotate(${degree}deg)`
     console.log(degree)
+}
+
+function updateValue(degree) {
+
 }
