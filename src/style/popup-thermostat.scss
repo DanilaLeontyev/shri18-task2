@@ -56,14 +56,15 @@
 }
 
 #controller {
-    top: 20px;
-    left: 20px;
+    top: 25px;
+    left: 25px;
     border-radius: 50%;
-	height: 180px;
-    width: 180px;
+	height: 170px;
+    width: 170px;
     position: absolute;
-    background-color: #fff;
+    background-color: transparent;
     box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    z-index: 4;
 }
 .temperature {
     position: absolute;
