@@ -81,3 +81,15 @@
     background-image: url('./assets/Icons/icon_arrow.svg');
     background-repeat: no-repeat;
 }
+
+.notch-container {
+    position: relative;
+    width: 260px;
+    height: 260px;
+}
+.thin { 
+    position: absolute;
+     width: 25px; 
+     height: 1px; 
+     border-top: 1px solid gray;
+}
