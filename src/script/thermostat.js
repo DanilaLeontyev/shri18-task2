@@ -1,21 +1,8 @@
-import { Draggable } from 'gsap/draggable'
-
-// Draggable.create('#controller', {
-//     type: "rotation",
-//     throwProps: true,
-//     bounds: { maxRotation: 135, minRotation: -135 },
-//     onClick: function () {
-//         console.log("clicked");
-//     },
-//     onThrowComplete: function () {
-//         console.log(this.rotation);
-//     }
-// })
-
 const controller = document.querySelector('#controller')
 const temperature = document.querySelector('.temperature')
+
 let minAngle = 130;
-let maxAngle = 230;
+let maxAngle = 240;
 
 controller.addEventListener('mousedown', function () {
     this.addEventListener('mousemove', moveController)
@@ -23,6 +10,12 @@ controller.addEventListener('mousedown', function () {
         this.removeEventListener('mousemove', moveController)
     })
 })
+
+function vec2ang(x, y) {
+    let angleInRadians = Math.atan2(y, x);
+    let angleInDegrees = (angleInRadians / Math.PI) * 180;
+    return angleInDegrees;
+}
 
 function moveController(event) {
     let rect = this.getBoundingClientRect();
@@ -33,42 +26,63 @@ function moveController(event) {
     let mouseX = event.pageX
     let mouseY = event.pageY
 
-    let radians = Math.atan2(mouseX - x, mouseY - y)
-    let degree = (radians * (180 / Math.PI) * -1) + 180;
-
+    let degree = vec2ang(mouseX - x, mouseY - y) + 90
     if (degree >= minAngle && degree <= maxAngle) {
         return;
     }
 
     this.style.transform = `rotate(${degree}deg)`
-    console.log(degree)
 }
 
-let angle = 0;
-let rotate_x = 120;
+let angle = Math.PI * 2 / 3;
+let rotate_x = 100;
 let rotate_y = 0;
 
-function vec2ang(x, y) {
-    let angleInRadians = Math.atan2(y, x);
-    let angleInDegrees = (angleInRadians / Math.PI) * 180;
-    return angleInDegrees;
-}
+
 
 let notchContainer = document.querySelector('.notch-container')
 
-for (let i = 0; i < 60; i++) {
+for (let i = 0; i < 120; i++) {
     let thin = document.createElement("div");
     let x = rotate_x * Math.cos(angle) - rotate_y * Math.cos(angle);
     let y = rotate_y * Math.cos(angle) + rotate_x * Math.sin(angle);
     let r = vec2ang(x, y);
     thin.className = "thin";
-    thin.style.left = 127 + x + "px";
-    thin.style.top = 127 + y + "px";
+    thin.style.left = 100 + x + "px";
+    thin.style.top = 110 + y + "px";
     thin.style.transform = "rotate(" + r + "deg)";
     notchContainer.appendChild(thin);
-    angle += (Math.PI / 300) * 10;
+    angle += (Math.PI / 720) * 10;
 }
 
-function updateValue(degree) {
 
+drawNotch()
+
+function drawNotch() {
+    let canvas = document.querySelector('#notch')
+    let ctx = canvas.getContext('2d')
+
+    ctx.translate(0.5, 0.5);
+    let centerX = canvas.width / 2
+    let centerY = canvas.height / 2
+
+    let radiusOut = canvas.width / 2
+    let radiusIn = radiusOut - 20
+    angle = -4 * Math.PI / 3;
+    ctx.strokeStyle = 'black'
+    ctx.lineWidth = 1;
+
+    for (let i = 0; i < 121; i++) {
+        let x1 = centerX + radiusOut * Math.cos(angle)
+        let y1 = centerY + radiusOut * Math.sin(angle)
+
+        let x2 = centerX + radiusIn * Math.cos(angle)
+        let y2 = centerY + radiusIn * Math.sin(angle)
+
+        ctx.beginPath();
+        ctx.moveTo(x1, y1);
+        ctx.lineTo(x2, y2);
+        ctx.stroke();
+        angle += Math.PI / 360 * 5
+    }
 }
