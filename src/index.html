@@ -197,14 +197,44 @@
         <p class="device-status">Включено</p>
       </div>
       <div class="thermostat">
-        <div class="notch-container">
-          <div id="controller">
-            <div class="knob"></div>
-          </div>
-          <div class="temperature">+23</div>
+        <div id="controller">
+          <div class="knob"></div>
+        </div>
+        <div class="temperature">+23</div>
+        <div class="circle">
+          <img width="220" height="220" src=<%=require( './assets/Oval@1x.svg')%>>
         </div>
       </div>
-      <canvas width="220" height="220" id="notch"></canvas>
+
+      <div class="testCircle">
+        <img width="220" height="220" src=<%=require( './assets/Oval@1x.svg')%>>
+        <div class="white-sector"></div>
+      </div>
+    </div>
+
+    <div class="popup-buttons ">
+      <button class="popup-apply ">Применить</button>
+      <button class="popup-close ">Закрыть</button>
+    </div>
+  </div>
+
+  <div class="popup-sliderContainer">
+    <div class="sliderThermostat">
+      <div class="device-header">
+        <h2 class="device-title">Xiaomi Warm Floor</h2>
+        <p class="device-status">Включено</p>
+      </div>
+      <div class="range-container">
+        <div class="range-slider">
+          <input type="range" orient="vertical" min="0" max="100" />
+          <div class="range-slider__thumb"></div>
+        </div>
+        <div class="range-slider">
+          <input type="range" orient="vertical" min="0" max="100" />
+          <div class="range-slider__thumb">
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="popup-buttons ">

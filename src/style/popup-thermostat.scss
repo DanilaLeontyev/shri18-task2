@@ -6,6 +6,7 @@
     background: rgba(51,51,51,0.50);
     display: flex;
     flex-direction: column;
+    display: none;
 }
 .popup-buttons {
     display: flex;
@@ -47,17 +48,13 @@
     width: 220px;
     height: 220px;
 }
-.notch-container {
-    position: relative;
-    margin: 0 auto;
-}
 
 #controller {
     top: 25px;
     left: 25px;
     border-radius: 50%;
-	height: 175px;
-    width: 175px;
+	height: 170px;
+    width: 170px;
     position: absolute;
     background-color: transparent;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
@@ -68,6 +65,7 @@
     left: 50px;
     top: 70px;
     font-size: 66px;
+    z-index: 3;
 }
 
 .knob {
@@ -79,15 +77,31 @@
     background-repeat: no-repeat;
 }
 
-.thin { 
-    position: absolute;
-    width: 25px; 
-    height: 1px; 
-    border-top: 1px solid gray;
-    border-radius: 20px;
-}
-
-
 #notch {
     align-self: center;
+}
+
+.circle {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+}
+
+.testCircle {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    overflow: hidden;
+    
+}
+.white-sector {
+    position: absolute;
+    top: 135px;
+    left: 55px;
+    width: 110px;
+    height: 110px;
+    background-color: white;
+    transform: rotate(45deg)
 }
