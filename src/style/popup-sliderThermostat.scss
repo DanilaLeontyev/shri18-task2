@@ -49,13 +49,26 @@
 
 .range-slider__thumb {
   position: absolute;
-  width: 60px;
-  height: 60px;
+  left: -3.5px;
+  width: 68px;
+  height: 68px;
   background: transparent;
   border: 4px solid white;
   border-radius: 50%;
   pointer-events: none;
+  z-index: 3;
 }
+
+// .thumb-inside {
+//   display: block;
+//   position: absolute;
+//   top: 4px;
+//   left: 4px;
+//   width: 52px;
+//   height: 52px;
+//   border-radius: 50%;
+//   background-color: transparent;
+// }
 
 input[type='range'][orient='vertical'] {
   position: relative;
