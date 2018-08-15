@@ -1,65 +1,98 @@
-const controller = document.querySelector('#controller')
-const temperature = document.querySelector('.temperature')
+const controller = document.querySelector('#controller');
+const temperature = document.querySelector('.temperature');
 
-let minAngle = 146;
-// let maxAngle = 246;
+controller.addEventListener('mousedown', function() {
+  this.addEventListener('mousemove', moveController);
+  this.addEventListener('mouseup', function() {
+    this.removeEventListener('mousemove', moveController);
+  });
+});
 
-controller.addEventListener('mousedown', function () {
-    this.addEventListener('mousemove', moveController)
-    this.addEventListener('mouseup', function () {
-        this.removeEventListener('mousemove', moveController)
-    })
-})
-
-function vec2ang(x, y) {
-    let angleInRadians = Math.atan2(y, x);
-    let angleInDegrees = (angleInRadians / Math.PI) * 180;
-    return angleInDegrees;
-}
+controller.addEventListener('touchstart', function() {
+  this.addEventListener('touchmove', moveControllerTouch);
+  this.addEventListener('touchend', function() {
+    this.removeEventListener('touchmove', moveControllerTouch);
+  });
+});
 
 function moveController(event) {
-    let rect = this.getBoundingClientRect();
+  event.preventDefault();
+  let minAngle = 130;
+  let maxAngle = 230;
+  let rect = this.getBoundingClientRect();
+  let x = rect.left + rect.width / 2;
+  let y = rect.top + rect.height / 2;
 
-    let x = rect.left + rect.width / 2
-    let y = rect.top + rect.height / 2
+  let mouseX = event.pageX;
+  let mouseY = event.pageY;
 
-    let mouseX = event.pageX
-    let mouseY = event.pageY
+  let degree = vec2ang(mouseX - x, mouseY - y) + 90;
+  if (degree >= minAngle && degree <= maxAngle) {
+    return;
+  }
 
-    let degree = vec2ang(mouseX - x, mouseY - y) + 90
-    // if (degree >= minAngle && degree <= maxAngle) {
-    //     return;
-    // }
-
-    this.style.transform = `rotate(${degree}deg)`
+  this.style.transform = `rotate(${degree}deg)`;
 }
 
+function moveControllerTouch(event) {
+  event.preventDefault();
+  let minAngle = 130;
+  let maxAngle = 230;
+  let rect = this.getBoundingClientRect();
+  let x = rect.left + rect.width / 2;
+  let y = rect.top + rect.height / 2;
 
-// function drawNotch() {
-//     let canvas = document.querySelector('#notch')
-//     let ctx = canvas.getContext('2d')
+  let mouseX = event.changedTouches[0].pageX;
+  let mouseY = event.changedTouches[0].pageY;
 
-//     ctx.translate(0.5, 0.5);
-//     let centerX = canvas.width / 2
-//     let centerY = canvas.height / 2
+  let degree = vec2ang(mouseX - x, mouseY - y) + 90;
+  if (degree >= minAngle && degree <= maxAngle) {
+    return;
+  }
 
-//     let radiusOut = canvas.width / 2
-//     let radiusIn = radiusOut - 23
-//     angle = -4 * Math.PI / 3;
-//     ctx.strokeStyle = 'black'
-//     ctx.lineWidth = 1;
+  this.style.transform = `rotate(${degree}deg)`;
+}
 
-//     for (let i = 0; i < 121; i++) {
-//         let x1 = centerX + radiusOut * Math.cos(angle)
-//         let y1 = centerY + radiusOut * Math.sin(angle)
+drawNotch();
 
-//         let x2 = centerX + radiusIn * Math.cos(angle)
-//         let y2 = centerY + radiusIn * Math.sin(angle)
+function drawNotch() {
+  let canvas = document.querySelector('.testCircle');
+  let ctx = canvas.getContext('2d');
+  let radius = 85;
+  let lineHeight = 22;
+  let lineCount = 360 / 2.5;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.lineWidth = 1;
+  ctx.strokeStyle = '#808080';
+  ctx.strokeStyle = '#F8C46D';
 
-//         ctx.beginPath();
-//         ctx.moveTo(x1, y1);
-//         ctx.lineTo(x2, y2);
-//         ctx.stroke();
-//         angle += Math.PI / 360 * 5
-//     }
-// }
+  for (let i = 0; i < lineCount; i++) {
+    let t = i * (360 / lineCount);
+    let tr = degToRad(t - 90) % 360;
+
+    if (t > 330 || t < 30) continue;
+    let fromX = canvas.width / 2 + radius * Math.cos(tr);
+    let fromY = canvas.height / 2 + radius * Math.sin(tr);
+
+    let toX = canvas.width / 2 + (radius + lineHeight) * Math.cos(tr);
+    let toY = canvas.height / 2 + (radius + lineHeight) * Math.sin(tr);
+
+    ctx.beginPath();
+    ctx.moveTo(fromX, fromY);
+    ctx.lineTo(toX, toY);
+    ctx.stroke();
+  }
+}
+
+function vec2ang(x, y) {
+  let angleInRadians = Math.atan2(y, x);
+  let angleInDegrees = (angleInRadians / Math.PI) * 180;
+  return angleInDegrees;
+}
+
+function radToDeg(rad) {
+  return rad * (180 / Math.PI);
+}
+function degToRad(deg) {
+  return deg * (Math.PI / 180);
+}

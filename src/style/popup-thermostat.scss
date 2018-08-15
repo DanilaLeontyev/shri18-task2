@@ -1,107 +1,94 @@
 .popup-container {
-    min-width: 100%;
-    min-height: 100%;
-    top: 0;
-    position: absolute;
-    background: rgba(51,51,51,0.50);
-    display: flex;
-    flex-direction: column;
-    display: none;
+  min-width: 100%;
+  min-height: 100%;
+  top: 0;
+  position: absolute;
+  background: rgba(51, 51, 51, 0.5);
+  display: flex;
+  flex-direction: column;
 }
 .popup-buttons {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .popup-buttons > button {
-    margin: 20px;
-    border-radius: 20px;
-    height: 60px;
-    font-family: "Arial";
-    font-weight: bold;
-    font-size: 18px;
-    border: none;
+  margin: 20px;
+  border-radius: 20px;
+  height: 60px;
+  font-family: 'Arial';
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
 }
 
 .popup-apply {
-    background-color: #FFD93E;
+  background-color: #ffd93e;
 }
 
 .popup-close {
-    background-color: white;
-} 
+  background-color: white;
+}
 
 .popup-thermostat {
-    margin: 20px;
-    background-color: white;
-    border-radius: 20px;
-    top: 0;
-    flex-grow: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  margin: 20px;
+  background-color: white;
+  border-radius: 20px;
+  top: 0;
+  flex-grow: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .thermostat {
-    position: relative;
-    width: 220px;
-    height: 220px;
+  position: relative;
+  width: 220px;
+  height: 220px;
 }
 
 #controller {
-    top: 25px;
-    left: 25px;
-    border-radius: 50%;
-	height: 170px;
-    width: 170px;
-    position: absolute;
-    background-color: transparent;
-    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
-    z-index: 4;
+  top: 25px;
+  left: 25px;
+  border-radius: 50%;
+  height: 170px;
+  width: 170px;
+  position: absolute;
+  background-color: transparent;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+  z-index: 4;
 }
 .temperature {
-    position: absolute;
-    left: 50px;
-    top: 70px;
-    font-size: 66px;
-    z-index: 3;
+  position: absolute;
+  left: 50px;
+  top: 70px;
+  font-size: 66px;
+  z-index: 3;
 }
 
 .knob {
-    position: absolute;
-    left: 50%;
-    width: 13px;
-    height: 10px;
-    background-image: url('./assets/Icons/icon_arrow.svg');
-    background-repeat: no-repeat;
+  position: absolute;
+  left: 50%;
+  width: 13px;
+  height: 10px;
+  background-image: url('./assets/Icons/icon_arrow.svg');
+  background-repeat: no-repeat;
 }
 
 #notch {
-    align-self: center;
+  align-self: center;
 }
 
 .circle {
-    position: relative;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
 }
 
 .testCircle {
-    position: relative;
-    width: 220px;
-    height: 220px;
-    border-radius: 50%;
-    overflow: hidden;
-    
-}
-.white-sector {
-    position: absolute;
-    top: 135px;
-    left: 55px;
-    width: 110px;
-    height: 110px;
-    background-color: white;
-    transform: rotate(45deg)
+  align-self: flex-end;
+  position: relative;
+  transform: rotate(180deg);
 }

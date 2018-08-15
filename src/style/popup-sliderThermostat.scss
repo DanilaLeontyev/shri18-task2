@@ -6,6 +6,7 @@
   background: rgba(51, 51, 51, 0.5);
   display: flex;
   flex-direction: column;
+  display: none;
 }
 .sliderThermostat {
   margin: 20px;
@@ -41,8 +42,10 @@
 .range-slider {
   display: inline-block;
   width: 60px;
+  background: linear-gradient(0deg, #004f8f 0%, #947e00 50%, #a34915 100%);
   position: relative;
   text-align: center;
+  border-radius: 35px;
   height: 336px;
   max-height: 100%;
 }
@@ -58,17 +61,6 @@
   pointer-events: none;
   z-index: 3;
 }
-
-// .thumb-inside {
-//   display: block;
-//   position: absolute;
-//   top: 4px;
-//   left: 4px;
-//   width: 52px;
-//   height: 52px;
-//   border-radius: 50%;
-//   background-color: transparent;
-// }
 
 input[type='range'][orient='vertical'] {
   position: relative;
@@ -117,4 +109,12 @@ input[type='range'][orient='vertical'] {
 }
 .range-slider__lighting {
   background: linear-gradient(0deg, #ffe88c 0%, #ffb100 100%);
+}
+
+.thumb-inside {
+  position: absolute;
+  top: 50px;
+  width: 60px;
+  height: 100px;
+  // background-color: red;
 }
