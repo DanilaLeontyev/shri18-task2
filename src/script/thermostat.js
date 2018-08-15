@@ -31,6 +31,7 @@ function moveController(event) {
     return;
   }
 
+  drawNotch(degree);
   this.style.transform = `rotate(${degree}deg)`;
 }
 
@@ -49,13 +50,11 @@ function moveControllerTouch(event) {
   if (degree >= minAngle && degree <= maxAngle) {
     return;
   }
-
+  drawNotch(degree);
   this.style.transform = `rotate(${degree}deg)`;
 }
 
-drawNotch();
-
-function drawNotch() {
+function drawNotch(degree) {
   let canvas = document.querySelector('.testCircle');
   let ctx = canvas.getContext('2d');
   let radius = 85;
@@ -76,6 +75,8 @@ function drawNotch() {
 
     let toX = canvas.width / 2 + (radius + lineHeight) * Math.cos(tr);
     let toY = canvas.height / 2 + (radius + lineHeight) * Math.sin(tr);
+
+    t > degree ? (ctx.strokeStyle = '#808080') : (ctx.strokeStyle = '#F8C46D');
 
     ctx.beginPath();
     ctx.moveTo(fromX, fromY);
