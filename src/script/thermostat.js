@@ -15,10 +15,11 @@ controller.addEventListener('touchstart', function() {
   });
 });
 
+drawNotch();
 function moveController(event) {
   event.preventDefault();
-  let minAngle = 130;
-  let maxAngle = 230;
+  let minAngle = 150;
+  let maxAngle = 205;
   let rect = this.getBoundingClientRect();
   let x = rect.left + rect.width / 2;
   let y = rect.top + rect.height / 2;
@@ -37,8 +38,8 @@ function moveController(event) {
 
 function moveControllerTouch(event) {
   event.preventDefault();
-  let minAngle = 130;
-  let maxAngle = 230;
+  let minAngle = 150;
+  let maxAngle = 205;
   let rect = this.getBoundingClientRect();
   let x = rect.left + rect.width / 2;
   let y = rect.top + rect.height / 2;
@@ -76,7 +77,9 @@ function drawNotch(degree) {
     let toX = canvas.width / 2 + (radius + lineHeight) * Math.cos(tr);
     let toY = canvas.height / 2 + (radius + lineHeight) * Math.sin(tr);
 
-    t > degree ? (ctx.strokeStyle = '#808080') : (ctx.strokeStyle = '#F8C46D');
+    t - 185 > degree
+      ? (ctx.strokeStyle = '#808080')
+      : (ctx.strokeStyle = '#F8C46D');
 
     ctx.beginPath();
     ctx.moveTo(fromX, fromY);
