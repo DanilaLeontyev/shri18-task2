@@ -4,7 +4,7 @@ function updateSlider(element) {
       lastValue = parent.getAttribute('data-slider-value');
 
     if (lastValue === element.value) {
-      return; // No value change, no need to update then
+      return;
     }
 
     parent.setAttribute('data-slider-value', element.value);
@@ -13,8 +13,8 @@ function updateSlider(element) {
     let newVal =
       ((element.value - element.min) / (element.max - element.min)) *
       (parent.clientHeight - thumb.clientHeight);
-
-    thumb.style.bottom = `${newVal}px`;
+    console.log(thumb.style.border);
+    thumb.style.bottom = `${newVal - 4}px`;
   }
 }
 

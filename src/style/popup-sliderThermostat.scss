@@ -50,9 +50,10 @@
 
 .range-slider__thumb {
   position: absolute;
+  box-sizing: content-box;
   left: -4px;
-  width: 67px;
-  height: 67px;
+  width: 60px;
+  height: 60px;
   background: radial-gradient(
     circle,
     transparent 26.5px,
@@ -71,8 +72,8 @@ input[type='range'] {
   width: 100%;
   display: inline-block;
   position: relative;
-  writing-mode: bt-lr; // IE
-  -webkit-appearance: slider-vertical; // webkit
+  writing-mode: bt-lr;
+  -webkit-appearance: slider-vertical;
   &::-webkit-slider-runnable-track,
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
