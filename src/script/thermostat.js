@@ -1,5 +1,6 @@
 const controller = document.querySelector('#controller');
-const temperature = document.querySelector('.temperature');
+const temperature = document.querySelector('#temperature');
+const temperatureSpan = document.querySelector('.temperature');
 let minAngle = 30;
 let maxAngle = 330;
 
@@ -10,6 +11,9 @@ controller.addEventListener('mousedown', function() {
   });
 });
 
+controller.addEventListener('mousedown', moveController);
+controller.addEventListener('touchstart', moveControllerTouch);
+
 controller.addEventListener('touchstart', function() {
   this.addEventListener('touchmove', moveControllerTouch);
   this.addEventListener('touchend', function() {
@@ -18,6 +22,18 @@ controller.addEventListener('touchstart', function() {
 });
 
 drawNotch();
+
+function calcValue(degree) {
+  let val = +temperature.value;
+  let newVal =
+    +temperature.min +
+    Math.floor((degree - 30) / (290 / (temperature.max - temperature.min)));
+  if (val === newVal) {
+    return;
+  }
+  temperatureSpan.innerHTML = `+${newVal}`;
+  temperature.value = `${newVal}`;
+}
 
 function moveController(event) {
   event.preventDefault();
@@ -32,8 +48,8 @@ function moveController(event) {
   if (degree <= minAngle || degree >= maxAngle) {
     return;
   }
-  console.log(degree);
   drawNotch(degree);
+  calcValue(degree);
   this.style.transform = `rotate(${degree}deg)`;
 }
 
@@ -49,6 +65,7 @@ function moveControllerTouch(event) {
     return;
   }
   drawNotch(degree);
+  calcValue(degree);
   this.style.transform = `rotate(${degree}deg)`;
 }
 
