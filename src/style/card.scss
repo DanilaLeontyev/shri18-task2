@@ -1,29 +1,29 @@
 .scenario-card {
-    min-width: 200px;
-    height: 100px;
-    background-color: #FFC201;
-    border-radius: 20px;
-    margin-right: 20px;
+  min-width: 200px;
+  height: 100px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  margin-right: 20px;
 }
 
 .scenario-card:first-child {
-    margin-left: 20px;
+  margin-left: 20px;
 }
 
 .main--cards .scenario-card {
-    min-height: 120px;
+  min-height: 120px;
 }
 
-@media (min-width: 1024px) {
-    .scenario-card:first-child {
-        margin-left: 0;
-    }
-    .selected .scenario-card{
-        margin-top: 20px;
-    }
+@media (min-width: 1366px) {
+  .scenario-card:first-child {
+    margin-left: 0;
+  }
+  .selected .scenario-card {
+    margin-top: 20px;
+  }
 
-    .main .scenario-card {
-        margin-top: 20px;
-        margin-right: 0;
-    }
+  .main .scenario-card {
+    margin-top: 20px;
+    margin-right: 0;
+  }
 }

@@ -13,7 +13,6 @@ function updateSlider(element) {
     let newVal =
       ((element.value - element.min) / (element.max - element.min)) *
       (parent.clientHeight - thumb.clientHeight);
-    console.log(thumb.style.border);
     thumb.style.bottom = `${newVal - 4}px`;
   }
 }
